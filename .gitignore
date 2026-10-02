@@ -13,3 +13,16 @@
 .externalNativeBuild
 .cxx
 local.properties
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Build
+build/
+.gradle/
+local.properties
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
