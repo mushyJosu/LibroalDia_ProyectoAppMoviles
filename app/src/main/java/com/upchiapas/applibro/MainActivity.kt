@@ -1,47 +1,26 @@
 package com.upchiapas.applibro
 
+// Imports base de Android
 import android.os.Bundle
+// ComponentActivity es la base para actividades con Compose
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+// Import de la pantalla que vamos a mostrar
+import com.upchiapas.applibro.presentation.LibroScreen
+// Import del tema de la aplicación (ajusta el nombre según tu proyecto)
 import com.upchiapas.applibro.ui.theme.ApplibroTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        // setContent define el contenido usando Compose
         setContent {
-            ApplibroTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+            ApplibroTheme(){
+                // Mostramos la pantalla principal
+                LibroScreen()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ApplibroTheme {
-        Greeting("Android")
     }
 }
